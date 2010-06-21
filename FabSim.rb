@@ -32,10 +32,10 @@ tick = Fiber.new{ # generate ticks on f
 BEGIN{ require 'yaml' # Serialization {{{
   f,w,b,t = YAML.load File.open('FacSim.yaml') if File.exist? 'FacSim.yaml' }
 END{ YAML.dump [f,w,b,t], File.open('FacSim.yaml','w') } #}}}
-loop{ s = '' #TODO: replace CUI with a platform independent GUI {{{
+loop{ s = '' #TODO: replace CUI with a platform independent GUI
   f.each_index{|x| s += "\n" 
     f[x].each_index{|y| s += (w.include?([x,y]) ? '[%s]':' %s ') % f[x][y] }
     b.each{|v,_| s += '+' if v and v[0] == x } }
   print s += "\n#{t}? "
   File.open('FacSim.log','a'){|fh| fh.puts s } # Logging...
-  break if 0 >= gets.to_i.times{ tick.resume } } #}}}
+  break if 0 >= gets.to_i.times{ tick.resume } }

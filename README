@@ -1,0 +1,10 @@
+Dies ist einfach eine sehr abstrakte Fabrik Simulation (FabSim).
+
+Eine Fabrik ist eine Matrix aus Arrays of Char, wobei den Chars eine spezielle
+Bedeutung zugewiesen wird.
+
+S ist die Start Position welche auf [0,0] mehr oder weniger festgelegt ist.
+E ist eine "End Position" welche ein Werkstueck zurrueck an die Start Position bewegt.
+T ist ein Transport Band welches Werkstuecken erlaubt sich darauf zu bewegen.
+B ist ein Puffer, welches ein Werkstueck fuer eine bestimmte Zeit Puffert.
+. ist ein Null, keine Werkstuecke koennen sich auf ein '.' bewegen.
