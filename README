@@ -8,3 +8,6 @@ E ist eine "End Position" welche ein Werkstueck zurrueck an die Start Position b
 T ist ein Transport Band welches Werkstuecken erlaubt sich darauf zu bewegen.
 B ist ein Puffer, welches ein Werkstueck fuer eine bestimmte Zeit Puffert.
 . ist ein Null, keine Werkstuecke koennen sich auf ein '.' bewegen.
+
+W war ein Weichen Element, da Transport Baender nur bidirektional waren.
+M war ein Maschinen Element, da dies nicht als Puffer abstrahiert wurde.
