@@ -11,3 +11,9 @@ B ist ein Puffer, welches ein Werkstueck fuer eine bestimmte Zeit Puffert.
 
 W war ein Weichen Element, da Transport Baender nur bidirektional waren.
 M war ein Maschinen Element, da dies nicht als Puffer abstrahiert wurde.
+
+Nutzung: Einfach FabSim.rb per ruby interpreter in einer Konsole starten;
+VORSICHT FabSim.rb erzeugt / ueberschreibt 2 Dateien namens "FabSim.log" und "FabSim.yaml"
+
+FabSim.log: Speichert den Konsole Output
+FabSim.yaml: Speichert den Fabrik Aufbau und den Status des Fabrik Ablaufes

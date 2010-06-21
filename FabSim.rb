@@ -53,6 +53,7 @@ BEGIN{ require 'yaml' # Serialization {{{
 END{
   YAML.dump [f,w,b,t], File.open('FacSim.yaml','w') } #}}}
 
+puts "Usage: (repeatedly) input number of ticks to compute."
 loop{ #TODO: replace CUI with a platform independent GUI {{{
   s = ''
   f.each_index{|x|
