@@ -16,7 +16,7 @@ class Array #{{{
   end #}}}
 
   def pos?(x,y) #{{{
-    0 <= x and x < self.length and
+    0 <= x and x < self.length    and
     0 <= y and y < self[x].length and
     self[x][y] != '.'
   end #}}}
@@ -25,6 +25,7 @@ end #}}}
 
 tick = Fiber.new{ # generate ticks on f {{{
   loop{ # to infinity and beyond!
+    #TODO: replace this with agent oriented solution {{{
     w.each_index{|i|
       if b[i] # workpiece is buffered {{{
 	e,j = b[i]
@@ -44,20 +45,20 @@ tick = Fiber.new{ # generate ticks on f {{{
 	when 'E'; w[i] = [ 0, 0]
 	when 'B'; w[i] = [-1,-1]; b[i] = [[x,y],i]
 	end #}}}
-      end }
+      end } #}}}
+
     Fiber.yield t += 1 } } #}}}
 
-BEGIN{ require 'yaml' # Serialization {{{
+BEGIN { require 'yaml' # Serialization {{{
   f,w,b,t = YAML.load File.open('FacSim.yaml') if File.exist? 'FacSim.yaml' }
 
-END{
+END {
   YAML.dump [f,w,b,t], File.open('FacSim.yaml','w') } #}}}
 
-puts "Usage: (repeatedly) input number of ticks to compute."
-loop{ #TODO: replace CUI with a platform independent GUI {{{
-  s = ''
-  f.each_index{|x|
-    s += "\n" 
+#TODO: replace this with a platform independent GUI {{{
+puts "Usage: input number of Ticks to compute or terminate with <Return>."
+loop{ s = ''
+  f.each_index{|x| s += "\n" 
     f[x].each_index{|y|
       s += (w.has?([x,y]) ? '[%s]':' %s ') % f[x][y] }
     b.each{|v,_|
